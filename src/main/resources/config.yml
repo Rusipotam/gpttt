@@ -1,0 +1,35 @@
+dictionary-resource: "dictionary/en_words.txt"
+fallback-translation-resource: "dictionary/en_ru_fallback.csv"
+
+storage:
+  type: "yaml" # yaml | mysql
+  mysql:
+    host: "127.0.0.1"
+    port: 3306
+    database: "minecraft"
+    username: "root"
+    password: ""
+    table: "vocab_entries"
+    pool-size: 5
+
+translation:
+  google:
+    enabled: false
+    api-key: ""
+    source-language: "en"
+    target-language: "ru"
+
+gui:
+  title: "&8Word Collector"
+  valid-word:
+    material: WRITABLE_BOOK
+    custom-model-data: 0
+    display-name: "&a%word%"
+  invalid-word:
+    material: BARRIER
+    custom-model-data: 0
+    display-name: "&c%word%"
+  lore:
+    click-to-add: "&eНажмите, чтобы добавить"
+    already-added: "&7Уже добавлено"
+    invalid: "&cПохоже на опечатку"
